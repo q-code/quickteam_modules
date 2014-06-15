@@ -1,0 +1,1 @@
+U hebt een Google map API sleutel nodig om de kaartfuncties te gebruiken. Om deze sleutel te krijgen, moet u voor het gebruiken van de kaart API van Google op uw website omhoog ondertekenen (zie <a class="small" href="http://code.google.com/apis/maps/signup.html">Google map API</a>). Laat API sleutel leeg om de kaartfuncties onbruikbaar te maken.

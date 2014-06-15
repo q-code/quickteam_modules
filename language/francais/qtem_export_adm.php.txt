@@ -1,0 +1,1 @@
+Ce module va exporter le contenu de la base de donn&eacute;e dans un fichier xml. Les profils (information personnelles et de groupe) seront export&eacute;es ainsi que les localisations cartographiques si elles existent. Les images et documents ne peuvent pas &ecirc;tre export&eacute;s.

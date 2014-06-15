@@ -1,0 +1,1 @@
+Deze module zal de inhoud van het gegevensbestand naar een xmldossier uitvoeren. De profielen (persoonlijke en teaminfo) zullen worden uitgevoerd, evenals de kaartplaats als het bestaan. Het beeld en de documenten kunnen niet worden uitgevoerd.

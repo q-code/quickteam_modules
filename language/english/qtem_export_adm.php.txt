@@ -1,0 +1,1 @@
+This module will export the content of the database to a xml file. The profile (personal and team info) will be exported, as well as the map locations if existing. The picture and documents cannot be exported.

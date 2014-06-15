@@ -1,0 +1,1 @@
+You need a Google map API key to use mapping functions. To get this key, you need to sign up for using Google's map API on your website (see <a class="small" href="http://code.google.com/apis/maps/signup.html">Google map API</a>). Let the API key empty to disable mapping functions.

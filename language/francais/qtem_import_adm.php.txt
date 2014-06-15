@@ -1,0 +1,1 @@
+Ce module va importer des donn&eacute;es QuickTeam. Les profils seront import&eacute;s dans un groupe. Si des positions g&eacute;ographiques existent, elles seront import&eacute;es &eacute;galement (les positions g&eacute;ographiques n'ont aucun impact si vous n'utilisez pas le module Map).

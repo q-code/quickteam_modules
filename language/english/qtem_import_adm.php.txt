@@ -1,0 +1,1 @@
+This module will import QuickTeam data. Profiles will be imported in one team. If map locations exist in the file, they will be imported (map locations have not impact if you are not using the Map module).

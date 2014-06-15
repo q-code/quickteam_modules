@@ -1,0 +1,1 @@
+Il vous faut une cl&eacute; Google API pour utiliser les fonctions cartographiques. Pour obtenir cette cl&eacute;, vous pouvez enregistrer votre site web comme utilisateur de l'interface Google (voyez <a class="small" href="http://code.google.com/apis/maps/signup.html">Google map API</a>). Laissez la cl&eacute; vide pour d&eacute;sactiver les fonctions cartographiques.

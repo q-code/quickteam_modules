@@ -1,0 +1,22 @@
+<?php
+$L['map_No_coordinates']='Niet gespecificeerd co&ouml;rdinaten';
+$L['map_Show_map']='Kaart tonen';
+$L['map_Hide_map']='Kaart huiden';
+$L['map_position']='Positie';
+$L['map_addrlatlng']='Adres, co&ouml;rdinaten';
+$L['map_H_addrlatlng']='Ga een adres of een latitude,longitude in';
+$L['map_View_item']='Profiel';
+$L['map_cancreate']='U kan de locatie geven';
+$L['map_canmove']='U kunt het punt bewegen';
+$L['map_editmove']='Het eerste bericht bewerken om het punt te bewegen';
+$L['map_undo']='Ondaan';
+$L['map_pntdelete']='Schrap punt';
+$L['map_pntadd']='Cre&euml;er punt';
+$L['map_H_pntadd']='Plaats de positie hier, op het centrum van de kaart...';
+$L['map_pntmove']='Hier is mijn plaats';
+$L['map_H_pntmove']='U kunt blijven het punt bewegen<br />alvorens uw punt op dit positie te plaatsen';
+$L['map_zoomtoall']='Zoom alles';
+$L['map_items']='Deze pagina bevat %s met positie (uit %s)';
+$L['map_E_noposition']='Geen punt te plaatsen...';
+$L['map_E_noaddr']='Droevig, konden wij uw adres niet vinden';
+$L['map_In_google']='Tonen met Google map';
