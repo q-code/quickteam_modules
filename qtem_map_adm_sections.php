@@ -17,11 +17,11 @@
 
 session_start();
 require_once 'bin/qte_init.php';
-include Translate('qte_adm.php');
+include Translate('@_adm.php');
 if ( sUser::Role()!='A' ) die(Error(13));
 
-include Translate('qtem_map.php');
-include Translate('qtem_map_adm.php'); unset($L['map_List'][0]);
+include Translate('@m_map.php');
+include Translate('@m_map_adm.php'); unset($L['map_List'][0]);
 include 'qtem_map_lib.php';
 
 // INITIALISE
@@ -151,7 +151,7 @@ function mapsection(section)
 
 // DISPLAY
 
-include 'qte_adm_p_header.php';
+include APP.'_adm_inc_hd.php';
 
 echo '<form method="post" action="',$oVIP->selfurl,'">
 <h2 class="subtitle">',L('Sections'),'</h2>
@@ -236,4 +236,4 @@ echo '</tr>
 
 // HTML END
 
-include 'qte_adm_p_footer.php';
+include APP.'_adm_inc_ft.php';

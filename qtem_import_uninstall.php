@@ -17,7 +17,7 @@
 
 session_start();
 require_once 'bin/qte_init.php';
-include Translate('qte_adm.php');
+include Translate('@_adm.php');
 if ( sUser::Role()!='A' ) die($L['E_admin']);
 
 // INITIALISE
@@ -35,7 +35,7 @@ if ( isset($_SESSION[QT]['m_import']) ) unset($_SESSION[QT]['m_import']);
 // --------
 // Html start
 // --------
-include 'qte_adm_p_header.php';
+include APP.'_adm_inc_hd.php';
 
 echo '
 <h2>Removing database settings</h2>
@@ -43,4 +43,4 @@ echo '
 <h2>Uninstall completed</h2>
 ';
 
-include 'qte_adm_p_footer.php';
+include APP.'_adm_inc_ft.php';

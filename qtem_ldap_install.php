@@ -17,7 +17,7 @@
 
 session_start();
 require_once 'bin/qte_init.php';
-include Translate('qte_adm.php');
+include Translate('@_adm.php');
 if ( sUser::Role()!='A' ) die($L['E_admin']);
 
 // INITIALISE
@@ -59,13 +59,13 @@ if ( empty($error) )
 // --------
 // Html start
 // --------
-include 'qte_adm_p_header.php';
+include APP.'_adm_inc_hd.php';
 
 echo '<h2>Checking components</h2>';
 if ( !$bStep1 )
 {
   echo '<p class="error">',$error,'</p>';
-  include 'qte_adm_p_footer.php';
+  include APP.'_adm_inc_ft.php';
   exit;
 }
 echo '
@@ -75,4 +75,4 @@ echo '
 <h2>Installation completed</h2>
 ';
 
-include 'qte_adm_p_footer.php';
+include APP.'_adm_inc_ft.php';

@@ -17,16 +17,16 @@
 
 session_start();
 require_once 'bin/qte_init.php';
-include Translate('qte_adm.php');
+include Translate('@_adm.php');
 if ( sUser::Role()!='A' ) die($L['E_admin']);
 
-include Translate('qtem_map.php');
-include Translate('qtem_map_adm.php');
+include Translate('@m_map.php');
+include Translate('@m_map_adm.php');
 include 'qtem_map_lib.php';
 
 function IsMapSection($id=0)
 {
-  return ( isset($_SESSION[QT]["m_map"][$id][0]) && $_SESSION[QT]["m_map"][$id][0] ); //note id can be int or 'U' or 'S'
+  return ( isset($_SESSION[QT]['m_map'][$id][0]) && $_SESSION[QT]['m_map'][$id][0] ); //note id can be int or 'U' or 'S'
 }
 function CountMapSections()
 {
@@ -55,6 +55,7 @@ foreach(array('m_map_gkey','m_map_gcenter','m_map_gzoom','m_map_gfind','m_map_gb
   if ( empty($arr) ) die('<span class="error">Parameters not found. The module is probably not installed properly.</span><br/><br/><a href="qte_adm_index.php">&laquo;&nbsp;'.$L['Exit'].'</a>');
   }
 }
+if ( !isset($_SESSION[QT]['m_map_gsymbol']) ) $_SESSION[QT]['m_map_gsymbol']='0';
 
 $arrSections = QTarrget(GetSections('A'));
 
@@ -155,7 +156,7 @@ function radioHighlight(id)
 }
 </script>
 ';
-include 'qte_adm_p_header.php';
+include APP.'_adm_inc_hd.php';
 
 echo '
 <form method="post" action="',Href(),'" onsubmit="return ValidateForm(this,enterkeyPressed);">
@@ -170,7 +171,6 @@ echo '
 //-----------
 if ( !empty($_SESSION[QT]['m_map_gkey']) ) {
 //-----------
-
 
 // current symbol
 $arr=explode(' ',$_SESSION[QT]['m_map_gsymbol']);// read first icon (can be '0')
@@ -318,4 +318,4 @@ if ( !empty($_SESSION[QT]['m_map_gkey']) )
   include 'qtem_map_load.php';
 }
 
-include 'qte_adm_p_footer.php';
+include APP.'_adm_inc_ft.php';

@@ -18,7 +18,7 @@
 session_start();
 require_once 'bin/qte_init.php';
 if ( sUser::Role()!='A' ) die('Access is restricted to administrators only');
-include Translate('qte_adm.php');
+include Translate('@_adm.php');
 include 'qtem_ldap_lib.php';
 
 // INITIALISE
@@ -202,7 +202,7 @@ function ToggleAnonymous(checked)
 </script>
 ';
 
-include 'qte_adm_p_header.php';
+include APP.'_adm_inc_hd.php';
 
 // DISPLAY TABS
 
@@ -412,4 +412,4 @@ Requested info <span style="color:#4444ff">cn,sn,mail,uid</span><br/>
 
 // HTML END
 
-include 'qte_adm_p_footer.php';
+include APP.'_adm_inc_ft.php';

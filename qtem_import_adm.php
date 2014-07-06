@@ -17,8 +17,8 @@
 
 session_start();
 require_once 'bin/qte_init.php';
-include Translate('qte_adm.php');
-include Translate('qtem_import.php');
+include Translate('@_adm.php');
+include Translate('@m_import.php');
 if ( sUser::Role()!='A' ) die(Error(13));
 
 // FUNCTIONS
@@ -145,7 +145,7 @@ if ( isset($_POST['ok']) )
 
     // Unregister global sys (will be recomputed on next page)
 
-    UpdateSectionStats($intDest);
+    cSection::UpdateStats($intDest);
     Unset($_SESSION[QT]['sys_members']);
     Unset($_SESSION[QT]['sys_newuserid']);
 
@@ -187,7 +187,7 @@ if (navigator.userAgent.toLowerCase().indexOf("chrome") != -1) doc.style.display
 </script>
 ';
 
-include 'qte_adm_p_header.php';
+include APP.'_adm_inc_hd.php';
 
 if ( isset($_SESSION['m_import_xml']['dest']) )      $intDest   = $_SESSION['m_import_xml']['dest'];
 if ( isset($_SESSION['m_import_xml']['status']) )    $strStatus = $_SESSION['m_import_xml']['status'];
@@ -228,4 +228,4 @@ echo '
 
 // HTML END
 
-include 'qte_adm_p_footer.php';
+include APP.'_adm_inc_ft.php';

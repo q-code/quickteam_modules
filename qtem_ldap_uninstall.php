@@ -17,7 +17,7 @@
 
 session_start();
 require_once 'bin/qte_init.php';
-include Translate('qte_adm.php');
+include Translate('@_adm.php');
 if ( sUser::Role()!='A' ) die($L['E_admin']);
 
 // INITIALISE
@@ -34,7 +34,7 @@ if ( isset($_SESSION[QT]['m_ldap']) ) unset($_SESSION[QT]['m_ldap']);
 // --------
 // Html start
 // --------
-include 'qte_adm_p_header.php';
+include APP.'_adm_inc_hd.php';
 
 echo '
 <h1>',$oVIP->selfname,'</h1>
@@ -43,4 +43,4 @@ echo '
 <h2>Uninstall completed</h2>
 ';
 
-include 'qte_adm_p_footer.php';
+include APP.'_adm_inc_ft.php';

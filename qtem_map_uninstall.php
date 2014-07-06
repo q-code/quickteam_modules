@@ -9,7 +9,6 @@
  * the PHP License and are unable to obtain it through the web, please
  * send a note to license@php.net so we can mail you a copy immediately.
  *
- * @category   Team
  * @package    QuickTeam
  * @author     Philippe Vandenberghe <info@qt-cute.org>
  * @copyright  2014 The PHP Group
@@ -18,7 +17,7 @@
 
 session_start();
 require_once 'bin/qte_init.php';
-include Translate('qte_adm.php');
+include Translate('@_adm.php');
 if ( sUser::Role()!='A' ) die($L['E_admin']);
 
 // INITIALISE
@@ -37,7 +36,8 @@ if ( isset($_SESSION[QT]['module_map']) ) unset($_SESSION[QT]['module_map']);
 // --------
 // Html start
 // --------
-include 'qte_adm_p_header.php';
+
+include APP.'_adm_inc_hd.php';
 
 echo '
 <h2>Removing database settings</h2>
@@ -45,4 +45,4 @@ echo '
 <h2>Uninstall completed</h2>
 ';
 
-include 'qte_adm_p_footer.php';
+include APP.'_adm_inc_ft.php';

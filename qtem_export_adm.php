@@ -17,8 +17,8 @@
 
 session_start();
 require_once 'bin/qte_init.php';
-include Translate('qte_adm.php');
-include Translate('qtem_export.php');
+include Translate('@_adm.php');
+include Translate('@m_export.php');
 if ( sUser::Role()!='A' ) die(Error(13));
 if ( !defined('QTE_XML_CHAR') ) define('QTE_XML_CHAR','iso-8859-1');
 
@@ -120,7 +120,7 @@ function ValidateForm(theForm)
 </script>
 ';
 
-include 'qte_adm_p_header.php';
+include APP.'_adm_inc_hd.php';
 
 echo '<form method="post" action="',$oVIP->selfurl,'" onsubmit="return ValidateForm(this);">
 <h2 class="subtitle">',$L['export']['Content'],'</h2>
@@ -174,4 +174,4 @@ echo '<h2 class="subtitle">',$L['Destination'],'</h2>
 
 // HTML END
 
-include 'qte_adm_p_footer.php';
+include APP.'_adm_inc_ft.php';
