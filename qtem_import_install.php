@@ -44,8 +44,8 @@ if ( empty($error) )
 
 if ( empty($error) )
 {
-  $oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="module_import"');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("module_import","Import")');
+  $oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="module_import"');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("module_import","Import")');
 }
 
 // --------

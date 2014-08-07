@@ -28,7 +28,7 @@ $oVIP->selfname = 'Uninstallation module LDAP '.$strVersion;
 
 // UNINSTALL
 
-$oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="module_ldap" OR param="m_ldap:login" OR param="m_ldap"');
+$oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="module_ldap" OR param="m_ldap:login" OR param="m_ldap"');
 if ( isset($_SESSION[QT]['m_ldap']) ) unset($_SESSION[QT]['m_ldap']);
 
 // --------

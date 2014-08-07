@@ -29,7 +29,7 @@ $oVIP->selfname = 'Uninstall module EXPORT '.$strVersion;
 
 // UNINSTALL
 
-$oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="module_export" OR param="m_export" OR param="m_export_conf"');
+$oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="module_export" OR param="m_export" OR param="m_export_conf"');
 
 if ( isset($_SESSION[QT]['module_export']) ) unset($_SESSION[QT]['module_export']);
 if ( isset($_SESSION[QT]['m_export']) ) unset($_SESSION[QT]['m_export']);

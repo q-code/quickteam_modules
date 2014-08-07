@@ -29,7 +29,7 @@ $oVIP->selfname = 'Unnstallation module IMPORT '.$strVersion;
 
 // UNINSTALL
 
-$oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="module_import"');
+$oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="module_import"');
 if ( isset($_SESSION[QT]['m_import']) ) unset($_SESSION[QT]['m_import']);
 
 // --------

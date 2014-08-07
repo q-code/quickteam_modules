@@ -42,14 +42,14 @@ if ( !empty($error) ) $bStep1 = false;
 // STEP Z
 if ( empty($error) )
 {
-  $oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="module_map" OR param="m_map_gkey" OR param="m_map_gcenter" OR param="m_map_gzoom" OR param="m_map_gbuttons" OR param="m_map_gsymbol"');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("module_map","Map")');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gkey","")');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gcenter","50.8468142558,4.35238838196")');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gzoom","10")');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gbuttons","P10100")');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gfind","Brussels, Belgium")');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gsymbol","0")');
+  $oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="module_map" OR param="m_map_gkey" OR param="m_map_gcenter" OR param="m_map_gzoom" OR param="m_map_gbuttons" OR param="m_map_gsymbol"');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("module_map","Map")');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gkey","")');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gcenter","50.8468142558,4.35238838196")');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gzoom","10")');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gbuttons","P10100")');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gfind","Brussels, Belgium")');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_map_gsymbol","0")');
   $_SESSION[QT]['module_map'] = 'Map';
   $_SESSION[QT]['m_map_gkey'] = '';
   $_SESSION[QT]['m_map_gcenter'] = '50.8468142558,4.35238838196';

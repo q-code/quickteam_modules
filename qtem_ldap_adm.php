@@ -39,10 +39,10 @@ if ( !isset($_SESSION[QT]['m_ldap']) ) $_SESSION[QT]['m_ldap']='0';
 
 if ( isset($_POST['ok']) && $tt==0 )
 {
-  $oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="m_ldap" OR param="m_ldap_users"');
+  $oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="m_ldap" OR param="m_ldap_users"');
 
   $_SESSION[QT]['m_ldap_users'] = $_POST['m_ldap_users']; if ( $_SESSION[QT]['m_ldap_users']!=='ldap' ) $_SESSION[QT]['m_ldap_users']='all';
-  $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_users","'.$_SESSION[QT]['m_ldap_users'].'")');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_users","'.$_SESSION[QT]['m_ldap_users'].'")');
 
   // Enable module (m_ldap=0 means disable, m_ldap=qtem_ldap_login.php means enabled
   $_SESSION[QT]['m_ldap']='0';
@@ -53,7 +53,7 @@ if ( isset($_POST['ok']) && $tt==0 )
     if ( empty($error) ) $_SESSION[QT]['m_ldap']='1';
 
   }
-  $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap","'.$_SESSION[QT]['m_ldap'].'")');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap","'.$_SESSION[QT]['m_ldap'].'")');
 
   // exit
   $_SESSION['pagedialog'] = (empty($error) ? 'O|'.$L['S_save'] : 'E|'.$error);
@@ -76,15 +76,15 @@ if ( isset($_POST['ok']) && $tt>0 )
   // Save
   if ( $tt>0 )
   {
-    $oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="m_ldap_host" OR param="m_ldap_login_dn" OR param="m_ldap_bind" OR param="m_ldap_bind_rdn" OR param="m_ldap_bind_pwd" OR param="m_ldap_s_rdn" OR param="m_ldap_s_filter" OR param="m_ldap_s_info"');
-    $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_host","'.$_SESSION[QT]['m_ldap_host'].'")');
-    $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_login_dn","'.$_SESSION[QT]['m_ldap_login_dn'].'")');
-    $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_bind","'.$_SESSION[QT]['m_ldap_bind'].'")');
-    $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_bind_rdn","'.$_SESSION[QT]['m_ldap_bind_rdn'].'")');
-    $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_bind_pwd","'.$_SESSION[QT]['m_ldap_bind_pwd'].'")');
-    $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_s_rdn","'.$_SESSION[QT]['m_ldap_s_rdn'].'")');
-    $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_s_filter","'.$_SESSION[QT]['m_ldap_s_filter'].'")');
-    $oDB->Query('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_s_info","'.$_SESSION[QT]['m_ldap_s_info'].'")');
+    $oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="m_ldap_host" OR param="m_ldap_login_dn" OR param="m_ldap_bind" OR param="m_ldap_bind_rdn" OR param="m_ldap_bind_pwd" OR param="m_ldap_s_rdn" OR param="m_ldap_s_filter" OR param="m_ldap_s_info"');
+    $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_host","'.$_SESSION[QT]['m_ldap_host'].'")');
+    $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_login_dn","'.$_SESSION[QT]['m_ldap_login_dn'].'")');
+    $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_bind","'.$_SESSION[QT]['m_ldap_bind'].'")');
+    $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_bind_rdn","'.$_SESSION[QT]['m_ldap_bind_rdn'].'")');
+    $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_bind_pwd","'.$_SESSION[QT]['m_ldap_bind_pwd'].'")');
+    $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_s_rdn","'.$_SESSION[QT]['m_ldap_s_rdn'].'")');
+    $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_s_filter","'.$_SESSION[QT]['m_ldap_s_filter'].'")');
+    $oDB->Exec('INSERT INTO '.TABSETTING.' VALUES ("m_ldap_s_info","'.$_SESSION[QT]['m_ldap_s_info'].'")');
     // exit
     $_SESSION['pagedialog'] = (empty($error) ? 'O|'.$L['S_save'] : 'E|'.$error);
   }

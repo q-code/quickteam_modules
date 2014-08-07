@@ -84,7 +84,7 @@ if ( isset($_POST['ok']) )
   if ( empty($_SESSION[QT]['m_map_gkey']) )
   {
     $_SESSION[QT]['m_map_gkey'] = trim($_POST['m_map_gkey']); if ( strlen($_SESSION[QT]['m_map_gkey'])<4 ) $_SESSION[QT]['m_map_gkey']='';
-    $oDB->Query('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gkey'].'" WHERE param="m_map_gkey"');
+    $oDB->Exec('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gkey'].'" WHERE param="m_map_gkey"');
   }
   else
   {
@@ -99,12 +99,12 @@ if ( isset($_POST['ok']) )
     // save value
     if ( empty($error) )
     {
-    $oDB->Query('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gkey'].'" WHERE param="m_map_gkey"');
-    $oDB->Query('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gcenter'].'" WHERE param="m_map_gcenter"');
-    $oDB->Query('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gzoom'].'" WHERE param="m_map_gzoom"');
-    $oDB->Query('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gbuttons'].'" WHERE param="m_map_gbuttons"');
-    $oDB->Query('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gfind'].'" WHERE param="m_map_gfind"');
-    $oDB->Query('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gsymbol'].'" WHERE param="m_map_gsymbol"');
+    $oDB->Exec('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gkey'].'" WHERE param="m_map_gkey"');
+    $oDB->Exec('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gcenter'].'" WHERE param="m_map_gcenter"');
+    $oDB->Exec('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gzoom'].'" WHERE param="m_map_gzoom"');
+    $oDB->Exec('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gbuttons'].'" WHERE param="m_map_gbuttons"');
+    $oDB->Exec('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gfind'].'" WHERE param="m_map_gfind"');
+    $oDB->Exec('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gsymbol'].'" WHERE param="m_map_gsymbol"');
     }
   }
 

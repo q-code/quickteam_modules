@@ -42,8 +42,8 @@ if ( !empty($error) ) $bStep1 = false;
 // STEP Z
 if ( empty($error) )
 {
-  $oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="module_export" OR param="m_export_conf"');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("module_export","Export")');
+  $oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="module_export" OR param="m_export_conf"');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("module_export","Export")');
 }
 
 

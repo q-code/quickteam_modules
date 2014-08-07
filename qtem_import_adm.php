@@ -66,9 +66,9 @@ function endElement($parser, $strTag)
       }
     }
     //insert the user
-    if ( $oDB->Query( 'INSERT INTO '.TABUSER.' ('.implode(',',array_keys($arrVars)).') VALUES ('.implode(',',$arrVars).')' ) )
+    if ( $oDB->Exec('INSERT INTO '.TABUSER.' ('.implode(',',array_keys($arrVars)).') VALUES ('.implode(',',$arrVars).')' ) )
     {
-      $oDB->Query( 'INSERT INTO '.TABS2U.' (sid,userid,issuedate) VALUES ('.$_SESSION['m_import_xml']['dest'].','.$oItem->id.',"'.date('Ymd').'")' );
+      $oDB->Exec('INSERT INTO '.TABS2U.' (sid,userid,issuedate) VALUES ('.$_SESSION['m_import_xml']['dest'].','.$oItem->id.',"'.date('Ymd').'")' );
       $oItem->SaveKeywords($oItem->GetKeywords(GetFields('index_p')));
       $intCounts++;
     }

@@ -29,7 +29,7 @@ $oVIP->selfname = 'Uninstall module MAPPING '.$strVersion;
 
 // UNINSTALL
 
-$oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="module_map" OR param="m_map_gkey" OR param="m_map_gcenter" OR param="m_map_gzoom" OR param="m_map_gbuttons" OR param="m_map_gfind" OR param="m_map_gsymbol"');
+$oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="module_map" OR param="m_map_gkey" OR param="m_map_gcenter" OR param="m_map_gzoom" OR param="m_map_gbuttons" OR param="m_map_gfind" OR param="m_map_gsymbol"');
 
 if ( isset($_SESSION[QT]['module_map']) ) unset($_SESSION[QT]['module_map']);
 

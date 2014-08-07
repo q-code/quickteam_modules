@@ -58,7 +58,7 @@ if ( isset($_POST['submit']) )
     if ( $_POST['section']!='all' ) $strWhere = ' INNER JOIN '.TABS2U.' s ON s.userid=u.id WHERE u.id>0 AND s.sid='.$_POST['section'];
     if ( $_POST['status']!='all' ) $strWhere .= ' AND u.status="'.$_POST['status'].'"';
     if ( $_POST['coppa']!='all' ) $strWhere .= ' AND u.children="'.$_POST['coppa'].'"';
-    $oDB->Query( 'SELECT count(u.id) as countid FROM '.TABUSER.' u '.$strWhere );
+    $oDB->Query('SELECT count(u.id) as countid FROM '.TABUSER.' u '.$strWhere );
     $row=$oDB->Getrow();
     if ( $row['countid']==0 ) $error='No data found';
   }
@@ -69,7 +69,7 @@ if ( isset($_POST['submit']) )
 
   if ( empty($error) )
   {
-    $oDB2 = new cDB($qte_dbsystem,$qte_host,$qte_database,$qte_user,$qte_pwd,$qte_port,$qte_dsn);
+    $oDB2 = new cDB($qte_dbsystem,$qte_host,$qte_database,$qte_user,$qte_pwd);
 
     // start export
 
@@ -83,7 +83,7 @@ if ( isset($_POST['submit']) )
     echo '<quickteam version="2.5">',PHP_EOL;
 
     // export topic
-    $oDB->Query( 'SELECT u.* FROM '.TABUSER.' u '.$strWhere );
+    $oDB->Query('SELECT u.* FROM '.TABUSER.' u '.$strWhere );
     while($row=$oDB->Getrow())
     {
       $oItem = new cItem($row);

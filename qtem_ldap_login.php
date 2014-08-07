@@ -12,7 +12,7 @@ if ( $bLdapLogin )
   if ( $iProfile==0 )
   {
   qtem_ldap_profile($username,$password); // create new profile (will search email from ldap) 
-  $iProfile = $this->SysCount('members',' AND name="'.$username.'" AND pwd="'.sha1($password).'"'); // check profile is created
+  $iProfile = cVIP::SysCount('members',' AND name="'.$username.'" AND pwd="'.sha1($password).'"'); // check profile is created
   }
 }
 else

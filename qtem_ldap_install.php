@@ -43,10 +43,10 @@ if ( empty($error) )
 
 if ( empty($error) )
 {
-  $oDB->Query('DELETE FROM '.TABSETTING.' WHERE param="module_ldap" OR param="m_ldap:login" OR param="m_ldap"');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("module_ldap","LDAP")'); // module name
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_ldap:login","LDAP")');
-  $oDB->Query('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_ldap","0")');
+  $oDB->Exec('DELETE FROM '.TABSETTING.' WHERE param="module_ldap" OR param="m_ldap:login" OR param="m_ldap"');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("module_ldap","LDAP")'); // module name
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_ldap:login","LDAP")');
+  $oDB->Exec('INSERT INTO '.TABSETTING.' (param,setting) VALUES ("m_ldap","0")');
 }
 
 // STEP 3
