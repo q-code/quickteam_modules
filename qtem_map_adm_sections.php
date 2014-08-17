@@ -226,7 +226,7 @@ foreach ($arrFiles as $strFile=>$strName)
 {
 echo '<td class="center"><img alt="i" class="marker" src="qtem_map/'.$strFile.'.png"/><br/><span class="small">'.$strName.'</span></td>
 ';
-$i++;
+++$i;
 if ( $i>=9 ) { echo '</tr><tr>'; $i=0; }
 }
 echo '</tr>

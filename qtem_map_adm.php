@@ -33,7 +33,7 @@ function CountMapSections()
   $i=0;
   foreach($_SESSION[QT]['sys_sections'] as $id=>$name)
   {
-  if ( IsMapSection($id) ) $i++;
+  if ( IsMapSection($id) ) ++$i;
   }
   return $i;
 }

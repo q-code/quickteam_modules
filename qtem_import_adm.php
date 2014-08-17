@@ -46,7 +46,7 @@ function endElement($parser, $strTag)
   {
   case 'user':
     $oItem = new cItem($arrItems);
-    $oItem->id = $intItemInsertId; $intItemInsertId++;
+    $oItem->id = $intItemInsertId; ++$intItemInsertId;
     $oItem->status = $_SESSION['m_import_xml']['status'];
     if ( $_SESSION['m_import_xml']['dropdate'] ) $oItem->firstdate=date('Ymd'); //registration date
     // check fields names and values
@@ -70,7 +70,7 @@ function endElement($parser, $strTag)
     {
       $oDB->Exec('INSERT INTO '.TABS2U.' (sid,userid,issuedate) VALUES ('.$_SESSION['m_import_xml']['dest'].','.$oItem->id.',"'.date('Ymd').'")' );
       $oItem->SaveKeywords($oItem->GetKeywords(GetFields('index_p')));
-      $intCounts++;
+      ++$intCounts;
     }
     else
     {
@@ -146,8 +146,7 @@ if ( isset($_POST['ok']) )
     // Unregister global sys (will be recomputed on next page)
 
     cSection::UpdateStats($intDest);
-    Unset($_SESSION[QT]['sys_members']);
-    Unset($_SESSION[QT]['sys_newuserid']);
+    memUnset('sys_members');
 
     // End message (pause)
     if ( $intCounts==0 )
@@ -213,7 +212,7 @@ echo '<form method="post" action="',$oVIP->selfurl,'" enctype="multipart/form-da
 <td>
 <select id="status" name="status">
 ';
-foreach($oVIP->statuses as $strKey=>$arrStatus) echo '<option value="',$strKey,'"',($strStatus==$strKey ? QSEL : ''),'>',$strKey.' - '.$arrStatus['name'].'</option>';
+foreach(memGet('sys_statuses') as $strKey=>$arrStatus) echo '<option value="',$strKey,'"',($strStatus==$strKey ? QSEL : ''),'>',$strKey.' - '.$arrStatus['name'].'</option>';
 echo '
 </select></td>
 </tr>

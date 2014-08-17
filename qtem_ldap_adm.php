@@ -109,13 +109,13 @@ if ( isset($_POST['ok']) && $tt>0 )
     // open connection
     if ( empty($error) )
     {
-      $step++;
+      ++$step;
       $c = @ldap_connect($_SESSION[QT]['m_ldap_host']) or $error=ldap_err2str(ldap_errno($c));
     }
     // admin(anonymous) bind
     if ( empty($error) )
     {
-      $step++;
+      ++$step;
       $test_conn='<span style="color:green">started</span>';
       $test_find='<span style="color:red">failed</span>';
       $test_login='<span style="color:red">access denied</span>';
@@ -133,20 +133,20 @@ if ( isset($_POST['ok']) && $tt>0 )
     // search test user
     if ( empty($error) )
     {
-      $step++;
+      ++$step;
       $filter = str_replace('$username',$username,$_SESSION[QT]['m_ldap_s_filter']);
       $s = @ldap_search($c,$_SESSION[QT]['m_ldap_s_rdn'],$filter,explode(',',$_SESSION[QT]['m_ldap_s_info'])) or $error='Search result: '.ldap_err2str(ldap_errno($c));
     }
     // analyse search results
     if ( empty($error) )
     {
-      $step++;
+      ++$step;
       $intEntries = ldap_count_entries($c,$s);
       $test_find='<span style="color:green">'.$intEntries.' matching entries </span>';
       $users = ldap_get_entries($c, $s);
       $infos = explode(',',$_SESSION[QT]['m_ldap_s_info']);
       $results = array();
-      for($i=0;$i<$intEntries;$i++)
+      for($i=0;$i<$intEntries;++$i)
       {
         $results[$i] = '';
         foreach($infos as $info)
@@ -160,7 +160,7 @@ if ( isset($_POST['ok']) && $tt>0 )
     // bind test user
     if ( empty($error) )
     {
-      $step++;
+      ++$step;
       $b = qtem_ldap_bind($username,$password);
       if ( $b )
       {

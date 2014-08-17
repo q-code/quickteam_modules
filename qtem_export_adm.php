@@ -140,7 +140,7 @@ echo '<form method="post" action="',$oVIP->selfurl,'" onsubmit="return ValidateF
 <option value="all">[ ',$L['All'],' ]</option>
 ';
 $str = (isset($_POST['status']) ? $_POST['status'] : '-1');
-foreach($oVIP->statuses as $strKey=>$arrValue)
+foreach(memGet('sys_statuses') as $strKey=>$arrValue)
 {
 echo '<option value="',$strKey,'"'.(strval($strKey)==$str ? QSEL : '').'>',$strKey,' - ',$arrValue['statusname'],'</option>';
 }

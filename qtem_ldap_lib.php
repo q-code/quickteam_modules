@@ -55,7 +55,7 @@ function qtem_ldap_search($username)
   {
     $users = ldap_get_entries($c, $s);
     $intEntries = ldap_count_entries($c,$s);
-    for($i=0;$i<$intEntries;$i++)
+    for($i=0;$i<$intEntries;++$i)
     {
       if ( isset($users[$i]['mail'][0]) ) $mail = $users[$i]['mail'][0];
       if ( empty($mail) && isset($users[$i]['email'][0]) ) $mail = $users[$i]['email'][0];
