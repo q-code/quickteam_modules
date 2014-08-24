@@ -16,8 +16,8 @@
 */
 
 session_start();
-require_once 'bin/qte_init.php';
-include Translate('@_adm.php');
+require 'bin/qte_init.php';
+include Translate(APP.'_adm.php');
 include Translate('@m_import.php');
 if ( sUser::Role()!='A' ) die(Error(13));
 

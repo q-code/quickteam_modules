@@ -16,8 +16,8 @@
 */
 
 session_start();
-require_once 'bin/qte_init.php';
-include Translate('@_adm.php');
+require 'bin/qte_init.php';
+include Translate(APP.'_adm.php');
 include Translate('@m_export.php');
 if ( sUser::Role()!='A' ) die(Error(13));
 if ( !defined('QTE_XML_CHAR') ) define('QTE_XML_CHAR','iso-8859-1');

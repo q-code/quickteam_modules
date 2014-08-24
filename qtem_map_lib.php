@@ -87,7 +87,7 @@ function QTgcanmap($section=null,$strRole='')
   if ( !isset($_SESSION[QT]['m_map']) )
   {
     $_SESSION[QT]['m_map'] = array();
-    if ( file_exists('qtem_map/config.php') ) require_once 'qtem_map/config.php';
+    if ( file_exists('qtem_map/config.php') ) require 'qtem_map/config.php';
 
     foreach($oVIP->sections as $intSecid=>$strSectitle)
     {

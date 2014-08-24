@@ -2,7 +2,7 @@
 
 $bMap=true;
 if ( empty($_SESSION[QT]['m_map_gkey']) ) $bMap=false;
-if ( $bMap ) { require_once 'qtem_map_lib.php'; if ( !QTgcanmap($strCheck) ) $bMap=false; }
+if ( $bMap ) { require 'qtem_map_lib.php'; if ( !QTgcanmap($strCheck) ) $bMap=false; }
 if ( $bMap ) 
 {
   include Translate('@m_map.php');

@@ -16,8 +16,8 @@
 */
 
 session_start();
-require_once 'bin/qte_init.php';
-include Translate('@_adm.php');
+require 'bin/qte_init.php';
+include Translate(APP.'_adm.php');
 if ( sUser::Role()!='A' ) die(Error(13));
 
 include Translate('@m_map.php');
@@ -118,7 +118,7 @@ if ( isset($_POST['ok']) && !empty($_SESSION[QT]['m_map_gkey']) )
 // prepare section settings
 
 $_SESSION[QT]['m_map'] = array();
-if ( file_exists('qtem_map/config.php') ) require_once 'qtem_map/config.php';
+if ( file_exists('qtem_map/config.php') ) require 'qtem_map/config.php';
 
   foreach($arrSections as $intSecid=>$strSectitle)
   {
