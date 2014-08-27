@@ -20,8 +20,8 @@ require 'bin/qte_init.php';
 include Translate(APP.'_adm.php');
 if ( sUser::Role()!='A' ) die(Error(13));
 
-include Translate('@m_map.php');
-include Translate('@m_map_adm.php'); unset($L['map_List'][0]);
+include Translate('qtem_map.php');
+include Translate('qtem_map_adm.php'); unset($L['map_List'][0]);
 include 'qtem_map_lib.php';
 
 // INITIALISE

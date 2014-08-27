@@ -20,8 +20,8 @@ require 'bin/qte_init.php';
 include Translate(APP.'_adm.php');
 if ( sUser::Role()!='A' ) die($L['E_admin']);
 
-include Translate('@m_map.php');
-include Translate('@m_map_adm.php');
+include Translate('qtem_map.php');
+include Translate('qtem_map_adm.php');
 include 'qtem_map_lib.php';
 
 function IsMapSection($id=0)
