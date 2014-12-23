@@ -3,7 +3,7 @@
 /* ============
  * qte_map_lib.php
  * ------------
- * version: 3.0 build:20140608
+ * version: 3.0 build:20141222
  * This is a module library
  * ------------
  * QTgempty()

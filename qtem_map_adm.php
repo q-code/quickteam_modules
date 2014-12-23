@@ -12,7 +12,7 @@
 * @package    QuickTeam
 * @author     Philippe Vandenberghe <info@qt-cute.org>
 * @copyright  2013 The PHP Group
-* @version    3.0 build:20140608
+* @version    3.0 build:20141222
 */
 
 session_start();
@@ -83,12 +83,12 @@ if ( isset($_POST['ok']) )
   // on first initialisation only update gkey
   if ( empty($_SESSION[QT]['m_map_gkey']) )
   {
-    $_SESSION[QT]['m_map_gkey'] = trim($_POST['m_map_gkey']); if ( strlen($_SESSION[QT]['m_map_gkey'])<4 ) $_SESSION[QT]['m_map_gkey']='';
+    $_SESSION[QT]['m_map_gkey'] = trim($_POST['m_map_gkey']); if ( !isset($_SESSION[QT]['m_map_gkey'][3]) ) $_SESSION[QT]['m_map_gkey']=''; // minimum 4 char
     $oDB->Exec('UPDATE '.TABSETTING.' SET setting="'.$_SESSION[QT]['m_map_gkey'].'" WHERE param="m_map_gkey"');
   }
   else
   {
-    $_SESSION[QT]['m_map_gkey'] = trim($_POST['m_map_gkey']); if ( strlen($_SESSION[QT]['m_map_gkey'])<4 ) $_SESSION[QT]['m_map_gkey']='';
+    $_SESSION[QT]['m_map_gkey'] = trim($_POST['m_map_gkey']); if ( !isset($_SESSION[QT]['m_map_gkey'][3]) ) $_SESSION[QT]['m_map_gkey']=''; // minimum 4 char
     $_SESSION[QT]['m_map_gcenter'] = trim($_POST['m_map_gcenter']);
     $_SESSION[QT]['m_map_gzoom'] = trim($_POST['m_map_gzoom']);
     $_SESSION[QT]['m_map_gbuttons'] = substr($_POST['maptype'],0,1).(isset($_POST['streetview']) ? '1' : '0').(isset($_POST['map']) ? '1' : '0').(isset($_POST['scale']) ? '1' : '0').(isset($_POST['overview']) ? '1' : '0').(isset($_POST['mousewheel']) ? '1' : '0');

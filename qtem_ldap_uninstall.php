@@ -12,7 +12,7 @@
 * @package    LDAP
 * @author     Philippe Vandenberghe <info@qt-cute.org>
 * @copyright  2014 The PHP Group
-* @version    2.0 build:20140608
+* @version    2.0 build:20141222
 */
 
 session_start();

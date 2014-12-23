@@ -12,7 +12,7 @@
 * @package    QuickTeam
 * @author     Philippe Vandenberghe <info@qt-cute.org>
 * @copyright  2014 The PHP Group
-* @version    3.0 build:20140608
+* @version    3.0 build:20141222
 */
 
 session_start();
@@ -58,11 +58,11 @@ function endElement($parser, $strTag)
       if ( !in_array($name,$arrDbFields) ) { unset($arrVars[$name]); continue; }
       if ( in_array($name,array('id','teamvalue1','teamvalue2','x','y','z')) )
       {
-      $arrVars[$name]=(strlen($arrVars[$name])==0 || $arrVars[$name]==null ? 'NULL' : $values);
+      $arrVars[$name]=(strlen($arrVars[$name])===0 || $arrVars[$name]===null ? 'NULL' : $values);
       }
       else
       {
-      $arrVars[$name]='"'.(strlen($arrVars[$name])==0 ? '' : htmlspecialchars($values,ENT_QUOTES)).'"';
+      $arrVars[$name]='"'.(strlen($arrVars[$name])===0 ? '' : htmlspecialchars($values,ENT_QUOTES)).'"';
       }
     }
     //insert the user
@@ -205,7 +205,7 @@ echo '<form method="post" action="',$oVIP->selfurl,'" enctype="multipart/form-da
 <table class="t-data">
 <tr>
 <td class="headfirst" style="width:200px"><label for="section">',$L['import']['Destination'],'</label></td>
-<td><select id="section" name="section">',Sectionlist(0),'</select> <a href="qte_adm_sections.php?add">',$L['Section_add'],'</a></td>
+<td><select id="section" name="section">',Sectionlist(0),'</select> <a href="qte_adm_sections.php?add">',$L['Add'],'...</a></td>
 </tr>
 <tr>
 <td class="headfirst"><label for="status">',$L['Status'],'</label></td>
